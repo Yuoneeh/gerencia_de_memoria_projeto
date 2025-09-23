@@ -1,0 +1,25 @@
+- Small = 0-500
+
+- Medium = 500-1000
+
+- Big = 1000-1500
+
+- Massive = 1500+
+
+
+- Jogo onde você é um gnomo manejando processos de um computador, similar a um jogo de culinária,
+um usuário que funciona sozinho manda diferentes programas que ele quer executar, é tarefa do jogador
+um gnomo computacional distribuir estes processos entre os threads da RAM (memória principal) e da
+secundária (memória virtual / HD)
+
+- O jogador deve dissecar o programa e executar somente os processos necessários de modo a manter
+o uso de memória do computador abaixo do limite de Ram
+
+- A cada certo período de tempo o sistema checa se a memória está abaixo do threshhold, se não estiver
+o usuário se enfurece e o gnomo toma uma advertência, após 3 advertências, Game over
+
+-Se o jogador conseguir manejar o pc por 3 minutos sem perder, o usuário termina sua tarefa e vai dormir.
+Assim Vitória para o jogador!!!
+
+
+

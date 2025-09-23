@@ -2,6 +2,10 @@ extends PanelContainer
 
 @onready var texture_rect = $TextureRect
 
+@export_enum("NONE:0", "SMALL:1","MEDIUM:2","BIG:3","MASSIVE:4") 
+var slot_type : int
+
+
 func _get_drag_data(at_position: Vector2) -> Variant:
 	
 	set_drag_preview(get_preview())
