@@ -1,10 +1,16 @@
-- Small = 0-500
+Process containers
 
-- Medium = 500-1000
+- Tiny = 0-250 = 85x120
 
-- Big = 1000-1500
+- Small = 250-500 = 170x120
 
-- Massive = 1500+
+- Medium = 500-1000 = 255x120 
+
+- Large = 1000-2000 = 340x120
+
+- Gigantic = 2000+ =  340x240
+
+  
 
 
 - Jogo onde você é um gnomo manejando processos de um computador, similar a um jogo de culinária,
