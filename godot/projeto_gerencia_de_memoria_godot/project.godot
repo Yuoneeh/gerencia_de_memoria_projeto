@@ -12,5 +12,5 @@ config_version=5
 
 config/name="projeto_gerencia_de_memoria_godot"
 run/main_scene="uid://btbgvef6paept"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
