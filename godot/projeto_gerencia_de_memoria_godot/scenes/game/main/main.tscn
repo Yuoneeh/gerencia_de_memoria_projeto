@@ -1,24 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://btbgvef6paept"]
+[gd_scene load_steps=9 format=3 uid="uid://btbgvef6paept"]
 
 [ext_resource type="Script" uid="uid://c46rintv655n1" path="res://scenes/game/main/main.gd" id="1_e63ou"]
 [ext_resource type="PackedScene" uid="uid://dkxhuctstis4o" path="res://scenes/objects/background/background.tscn" id="2_jses0"]
+[ext_resource type="PackedScene" uid="uid://b1mv7jauc0ao8" path="res://scenes/objects/task_manager/task_manager.tscn" id="3_bryd7"]
 [ext_resource type="PackedScene" uid="uid://dhjsxbkm1eh6" path="res://scenes/objects/memory_slot/slot.tscn" id="3_f8ky3"]
+[ext_resource type="PackedScene" uid="uid://hkinuary6ur1" path="res://scenes/objects/task_bar/barra_de_tarefas.tscn" id="3_lq55d"]
 [ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="4_61abd"]
 [ext_resource type="Script" uid="uid://37rwxae1t3uo" path="res://scenes/objects/program_base/program_base.gd" id="4_irboa"]
 [ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/small/small_process.png" id="6_xomjg"]
-
-[sub_resource type="Texture2DRD" id="Texture2DRD_61abd"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_e63ou")
 
 [node name="background" parent="." instance=ExtResource("2_jses0")]
 
-[node name="barra_de_tarefas" type="ColorRect" parent="."]
-offset_top = 600.0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.07450981, 0.13725491, 0.09803922, 0.85490197)
+[node name="barra_de_tarefas" parent="." instance=ExtResource("3_lq55d")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -26,15 +22,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="process_panel" type="Control" parent="Control"]
+[node name="process_panel" parent="Control" instance=ExtResource("3_bryd7")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 106.0
+offset_right = 456.72974
+offset_bottom = 672.21625
+
+[node name="process_panel2" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = 34.0
-offset_top = 69.0
-offset_right = 368.0
-offset_bottom = 464.0
+offset_left = 803.0
+offset_top = 74.0
+offset_right = 1232.7297
+offset_bottom = 640.21625
 scale = Vector2(0.74, 0.74)
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/process_panel"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/process_panel2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,35 +45,138 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/process_panel"]
-layout_mode = 0
-offset_right = 340.0
-offset_bottom = 400.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/process_panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Control/process_panel/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Control/process_panel2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+columns = 4
 
-[node name="slot" parent="Control/process_panel/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+[node name="slot" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
 custom_minimum_size = Vector2(0.275, 51.965)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="TextureRect" parent="Control/process_panel/VBoxContainer/GridContainer/slot" index="0"]
-texture = SubResource("Texture2DRD_61abd")
-slot_type = 1
-SIZE = 2000
-
-[node name="slot2" parent="Control/process_panel/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
-layout_mode = 2
 size_flags_vertical = 3
 
-[node name="slot3" parent="Control/process_panel/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+[node name="slot2" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="slot4" parent="Control/process_panel/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+[node name="slot3" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot4" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot6" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot5" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot7" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot8" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot9" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot10" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot11" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot12" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot13" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot14" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot15" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot16" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot17" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot18" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot19" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot20" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot21" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot22" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot23" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="slot24" parent="Control/process_panel2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="process_program" type="Control" parent="Control"]
@@ -102,15 +208,12 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="TextureRect" parent="Control/process_program/VBoxContainer/GridContainer/slot" index="0"]
-texture = SubResource("Texture2DRD_61abd")
 slot_type = 3
-SIZE = 1000
 
 [node name="slot2" parent="Control/process_program/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
 layout_mode = 2
 size_flags_vertical = 3
+slot_type = 2
 
 [node name="program_base" type="Control" parent="Control"]
 anchors_preset = 0
@@ -139,48 +242,10 @@ slot_type = 3
 [node name="TextureRect" parent="Control/program_base/PassiveSlot2" index="0"]
 texture = ExtResource("6_xomjg")
 
-[node name="process_program2" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 782.0
-offset_top = 72.0
-offset_right = 1116.0
-offset_bottom = 467.0
-scale = Vector2(0.74, 0.74)
-
-[node name="PanelContainer" type="PanelContainer" parent="process_program2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="process_program2"]
-layout_mode = 0
-offset_right = 334.0
-offset_bottom = 394.0
-
-[node name="GridContainer" type="GridContainer" parent="process_program2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="slot" parent="process_program2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="slot2" parent="process_program2/VBoxContainer/GridContainer" instance=ExtResource("3_f8ky3")]
-layout_mode = 2
-size_flags_vertical = 3
-
 [node name="Sum_of_ram" type="Label" parent="."]
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[editable path="Control/process_panel/VBoxContainer/GridContainer/slot"]
-[editable path="Control/process_program/VBoxContainer/GridContainer/slot"]
 [editable path="Control/program_base/PassiveSlot2"]
-[editable path="process_program2/VBoxContainer/GridContainer/slot"]

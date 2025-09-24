@@ -1,0 +1,27 @@
+{
+		"0" : {
+			"texture" : "tiny_process.png",
+			"slot_type" : 1,
+			"SIZE" : 1
+	},
+		"1" : {
+				"texture" : "small_process.png",
+				"slot_type" : 2,
+				"SIZE" : 2
+		},
+		"2" : {
+				"texture" : "medium_process.png",
+				"slot_type" : 3,
+				"SIZE" : 3
+		},
+		"3" : {
+				"texture" : "large_process.png",
+				"slot_type" : 4,
+				"SIZE" : 4
+		},
+		"4" : {
+				"texture" : "gigantic_process.png",
+				"slot_type" : 5,
+				"SIZE" : 5
+		},
+}

@@ -14,3 +14,11 @@ config/name="projeto_gerencia_de_memoria_godot"
 run/main_scene="uid://btbgvef6paept"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ItemData="*res://autoload/database.gd"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

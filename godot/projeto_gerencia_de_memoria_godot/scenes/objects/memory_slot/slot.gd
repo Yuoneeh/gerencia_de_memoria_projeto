@@ -3,7 +3,7 @@ class_name Slot
  
 @onready var texture_rect = $TextureRect
  
-@export_enum("NONE:0","SMALL:1","MEDIUM:2","LARGE:3", "GIGANTIC:4") var slot_type : int
+@export_enum("NONE:0","TINY:1","SMALL:2","MEDIUM:3", "LARGE:4", "GIGANTIC:5") var slot_type : int
  
 var filled : bool = false
  

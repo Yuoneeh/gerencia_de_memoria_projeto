@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://hkinuary6ur1"]
+
+[ext_resource type="Script" uid="uid://j823htuvsksc" path="res://scenes/objects/task_bar/barra_de_tarefas.gd" id="1_hrbp8"]
+[ext_resource type="Texture2D" uid="uid://bk2755qx7hx5d" path="res://scenes/objects/task_manager/pack icons.png" id="1_r55kf"]
+[ext_resource type="PackedScene" uid="uid://b1mv7jauc0ao8" path="res://scenes/objects/task_manager/task_manager.tscn" id="2_cdgai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrbp8"]
+atlas = ExtResource("1_r55kf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r55kf"]
+atlas = ExtResource("1_r55kf")
+region = Rect2(64, -3, 32, 32)
+
+[node name="barra_de_tarefas" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hrbp8")
+task_manager = ExtResource("2_cdgai")
+
+[node name="barra_de_tarefas" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 600.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.07450981, 0.13725491, 0.09803922, 0.85490197)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="barra_de_tarefas"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 42.0
+
+[node name="TextureRect" type="TextureRect" parent="barra_de_tarefas/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = SubResource("AtlasTexture_hrbp8")
+
+[node name="task_manager" type="Button" parent="barra_de_tarefas/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TextureButton" type="TextureButton" parent="barra_de_tarefas/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_r55kf")
+
+[connection signal="pressed" from="barra_de_tarefas/HBoxContainer/TextureRect/task_manager" to="." method="_on_task_manager_pressed"]
