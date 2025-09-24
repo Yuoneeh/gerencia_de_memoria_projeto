@@ -1,3 +1,5 @@
+Notas 23/
+
 Process containers
 
 - Tiny = 0-250 = 85x120
@@ -26,6 +28,12 @@ o usuário se enfurece e o gnomo toma uma advertência, após 3 advertências, G
 
 -Se o jogador conseguir manejar o pc por 3 minutos sem perder, o usuário termina sua tarefa e vai dormir.
 Assim Vitória para o jogador!!!
+
+
+--------------------------------------------------------------------------------------------------------------
+Notas 24/09
+
+Pensar na área de processos como um inventário do residente Evil ao invés de um inventário
 
 
 
