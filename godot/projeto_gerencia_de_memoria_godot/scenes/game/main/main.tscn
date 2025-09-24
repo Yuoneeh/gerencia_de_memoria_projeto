@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hkinuary6ur1" path="res://scenes/objects/task_bar/barra_de_tarefas.tscn" id="3_lq55d"]
 [ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="4_61abd"]
 [ext_resource type="Script" uid="uid://37rwxae1t3uo" path="res://scenes/objects/program_base/program_base.gd" id="4_irboa"]
-[ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/small/small_process.png" id="6_xomjg"]
+[ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/all_assets/small_process.png" id="6_xomjg"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_e63ou")
@@ -231,7 +231,7 @@ offset_left = 50.0
 offset_top = 351.0
 offset_right = 220.0
 offset_bottom = 471.0
-slot_type = 1
+slot_type = 2
 
 [node name="PassiveSlot2" parent="Control/program_base" instance=ExtResource("4_61abd")]
 layout_mode = 0

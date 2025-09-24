@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv6mxdeiqgwnr"
-path="res://.godot/imported/gigantic_process.png-9802a4ce15be6ae3ad4f207ac82553f1.ctex"
+uid="uid://tyeueh5g7vsc"
+path="res://.godot/imported/small_process.png-de2c0cd7f87c5296c93007d456d56159.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/objects/processes/Gigantic/gigantic_process.png"
-dest_files=["res://.godot/imported/gigantic_process.png-9802a4ce15be6ae3ad4f207ac82553f1.ctex"]
+source_file="res://scenes/objects/processes/all_assets/small_process.png"
+dest_files=["res://.godot/imported/small_process.png-de2c0cd7f87c5296c93007d456d56159.ctex"]
 
 [params]
 

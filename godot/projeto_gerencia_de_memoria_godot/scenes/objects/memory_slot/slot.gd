@@ -35,3 +35,11 @@ func get_preview():
 
 func get_SIZE():
 	return texture_rect.SIZE
+
+func set_property(data):
+	texture_rect.property = data
+ 
+	if data["TEXTURE"] == null:
+		filled = false
+	else:
+		filled = true

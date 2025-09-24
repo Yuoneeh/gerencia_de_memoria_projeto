@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvwvifvv10t3m"]
+
+[ext_resource type="Script" uid="uid://u24i2410v8xy" path="res://scenes/objects/task_manager/drag_program.gd" id="1_aqf5u"]
+[ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/all_assets/small_process.png" id="2_n41pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxcif"]
+size = Vector2(370.2703, 144)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(416, 109)
+script = ExtResource("1_aqf5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(82, 1)
+texture = ExtResource("2_n41pv")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Sprite2D"]
+position = Vector2(-394.34506, -4.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D"]
+position = Vector2(404.3451, -5.5)
+shape = SubResource("RectangleShape2D_nxcif")
+
+[connection signal="mouse_entered" from="Node2D/Sprite2D/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]

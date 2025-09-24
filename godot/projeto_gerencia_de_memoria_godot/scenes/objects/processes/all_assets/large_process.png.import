@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tyeueh5g7vsc"
-path="res://.godot/imported/small_process.png-e05857ea1b0261515f7396efafb76204.ctex"
+uid="uid://dv2xhvqjpytln"
+path="res://.godot/imported/large_process.png-c29371504685ce82eaa3d078ab687e12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/objects/processes/small/small_process.png"
-dest_files=["res://.godot/imported/small_process.png-e05857ea1b0261515f7396efafb76204.ctex"]
+source_file="res://scenes/objects/processes/all_assets/large_process.png"
+dest_files=["res://.godot/imported/large_process.png-c29371504685ce82eaa3d078ab687e12.ctex"]
 
 [params]
 

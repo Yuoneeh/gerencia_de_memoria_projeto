@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4odj3xgyo1nc"]
+
+[node name="Window" type="Window"]
+oversampling_override = 1.0
+title = "AAAAAAA"
+initial_position = 1
+size = Vector2i(525, 100)
+mouse_passthrough_polygon = PackedVector2Array(1.77, 3.69)
+mouse_passthrough = true
