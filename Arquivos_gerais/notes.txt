@@ -2,6 +2,8 @@ Notas 23/
 
 Process containers
 
+- Rogue - process = 
+
 - Tiny = 0-250 = 85x120
 
 - Small = 250-500 = 170x120
