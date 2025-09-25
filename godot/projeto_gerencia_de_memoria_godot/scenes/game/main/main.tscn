@@ -32,6 +32,7 @@ offset_right = 456.72974
 offset_bottom = 672.21625
 
 [node name="process_panel2" type="Control" parent="Control"]
+visible = false
 anchors_preset = 0
 offset_left = 803.0
 offset_top = 74.0
@@ -182,6 +183,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="process_program" type="Control" parent="Control"]
+visible = false
 anchors_preset = 0
 offset_left = 415.0
 offset_top = 72.0
@@ -218,6 +220,7 @@ size_flags_vertical = 3
 slot_type = 2
 
 [node name="program_base" type="Control" parent="Control"]
+visible = false
 anchors_preset = 0
 offset_left = 329.0
 offset_top = 69.0

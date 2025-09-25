@@ -38,6 +38,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="barra_de_tarefas/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 13
 text = "     01:11
 24/09/2025"
 
