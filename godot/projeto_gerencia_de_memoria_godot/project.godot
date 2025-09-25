@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ItemData="*res://autoload/database.gd"
+DataHandler="*res://Data/DataHandler.gd"
 
 [input]
 

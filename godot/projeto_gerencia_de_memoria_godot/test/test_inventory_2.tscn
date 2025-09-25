@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0sv3brs16xs8"]
+
+[ext_resource type="PackedScene" uid="uid://vl4xf4cpadeg" path="res://scenes/objects/task_manager_2_0/task_manager_2_0.tscn" id="1_ctbkg"]
+
+[node name="test_inventory_2" type="Node2D"]
+
+[node name="Task_manager_2_0" parent="." instance=ExtResource("1_ctbkg")]
+offset_left = -6.0
+offset_top = -10.0
+offset_right = -6.0
+offset_bottom = -10.0

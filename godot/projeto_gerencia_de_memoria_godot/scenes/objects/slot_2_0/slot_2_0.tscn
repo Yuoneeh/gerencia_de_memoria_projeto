@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmeh0icvg2r3l"]
+
+[ext_resource type="Texture2D" uid="uid://cjwj76fwauvwo" path="res://scenes/objects/task_manager_2_0/slot.png" id="1_okibe"]
+[ext_resource type="Script" uid="uid://c4hsmgs0006bx" path="res://scenes/objects/slot_2_0/slot_2_0.gd" id="2_t4hiu"]
+
+[node name="Slot" type="TextureRect"]
+custom_minimum_size = Vector2(85, 120)
+texture = ExtResource("1_okibe")
+expand_mode = 1
+script = ExtResource("2_t4hiu")
+
+[node name="StatusFilter" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.41960785)

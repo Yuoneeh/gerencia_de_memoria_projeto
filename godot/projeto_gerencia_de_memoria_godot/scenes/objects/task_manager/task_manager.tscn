@@ -7,10 +7,10 @@
 [node name="task_manager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 5.0
-offset_top = 29.0
-offset_right = 434.72974
-offset_bottom = 595.21625
+offset_left = -159.0
+offset_top = 15.000001
+offset_right = 270.72974
+offset_bottom = 581.21625
 scale = Vector2(0.74, 0.74)
 script = ExtResource("1_tsba0")
 
@@ -200,7 +200,7 @@ layout_mode = 2
 text = "[ ]"
 
 [node name="fechar" type="Button" parent="ColorRect/HBoxContainer"]
-visible = false
+custom_minimum_size = Vector2(31.09, 0)
 layout_mode = 2
 text = "X"
 
