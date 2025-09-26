@@ -159,7 +159,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="draggable_border" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -6.7567596
 offset_top = -39.189198
@@ -168,7 +168,7 @@ offset_bottom = 0.81080246
 mouse_filter = 2
 color = Color(0.5372549, 0.63529414, 0.34117648, 1)
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="draggable_border"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -176,12 +176,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer2"]
+[node name="Label" type="Label" parent="draggable_border/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Task Manager"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="draggable_border"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -195,23 +195,23 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="minimizar" type="Button" parent="ColorRect/HBoxContainer"]
+[node name="minimizar" type="Button" parent="draggable_border/HBoxContainer"]
 layout_mode = 2
 text = "[ ]"
 
-[node name="fechar" type="Button" parent="ColorRect/HBoxContainer"]
+[node name="fechar" type="Button" parent="draggable_border/HBoxContainer"]
 custom_minimum_size = Vector2(31.09, 0)
 layout_mode = 2
 text = "X"
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Button" type="Button" parent="draggable_border"]
 layout_mode = 0
 offset_left = 1.3513037
 offset_right = 391.89185
 offset_bottom = 39.189198
 flat = true
 
-[connection signal="pressed" from="ColorRect/HBoxContainer/minimizar" to="." method="_on_minimizar_pressed"]
-[connection signal="pressed" from="ColorRect/HBoxContainer/fechar" to="." method="_on_fechar_pressed"]
-[connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="ColorRect/Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="draggable_border/HBoxContainer/minimizar" to="." method="_on_minimizar_pressed"]
+[connection signal="pressed" from="draggable_border/HBoxContainer/fechar" to="." method="_on_fechar_pressed"]
+[connection signal="button_down" from="draggable_border/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="draggable_border/Button" to="." method="_on_button_button_up"]
