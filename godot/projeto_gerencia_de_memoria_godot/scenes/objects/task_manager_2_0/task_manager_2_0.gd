@@ -45,7 +45,7 @@ func _on_slot_mouse_exited(a_Slot):
 func _on_button_spawn_pressed() -> void:
 	var new_task = task_scene.instantiate()
 	add_child(new_task)
-	new_task.load_task(6)
+	new_task.load_task(randi_range(1,6))
 	new_task.selected = true
 	task_held = new_task
 
@@ -63,15 +63,17 @@ func check_slot_availability(a_Slot) -> void:
 		if grid_array[grid_to_check].state == grid_array[grid_to_check].States.TAKEN:
 			can_place = false
 			return
+		
 	can_place = true
 	
 func set_grids(a_Slot):
 	for grid in task_held.task_grids:
 		var grid_to_check = a_Slot.slot_ID + grid[0] + grid[1] * col_count
-		var line_switch_check = a_Slot.slot_ID % col_count + grid[0]
 		if grid_to_check < 0 or grid_to_check >= grid_array.size():
 			continue
-		if line_switch_check < 0 or line_switch_check >= col_count:
+		#make sure the check don't wrap around boarders
+		var line_switch_check = a_Slot.slot_ID % col_count + grid[0]
+		if line_switch_check <0 or line_switch_check >= col_count:
 			continue
 			
 		if can_place:
@@ -80,7 +82,7 @@ func set_grids(a_Slot):
 			if grid[1] < icon_anchor.x: icon_anchor.x = grid[1]
 			if grid[0] < icon_anchor.y: icon_anchor.y = grid[0]
 		else:
-			grid_array[grid_to_check].set_color(grid_array[grid_to_check].States.FREE)
+			grid_array[grid_to_check].set_color(grid_array[grid_to_check].States.TAKEN)
 
 func clear_grid():
 	for grid in grid_array:

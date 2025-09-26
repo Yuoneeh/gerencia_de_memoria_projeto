@@ -8,7 +8,7 @@ signal slot_exited(slot)
 var slot_ID
 var is_hovering := false
 enum States {DEFAULT, TAKEN, FREE}
-var state := States.DEFAULT
+var state = States.DEFAULT
 var task_stored = null
 
 func set_color(a_state = States.DEFAULT) -> void:
