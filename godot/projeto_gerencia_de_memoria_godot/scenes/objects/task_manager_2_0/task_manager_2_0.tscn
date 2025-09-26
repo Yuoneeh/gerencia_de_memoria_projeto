@@ -34,11 +34,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Header"]
+[node name="Button_Spawn" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Header"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
+text = "Spawn Task
+"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -48,3 +51,5 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_constants/h_separation = 2
 columns = 4
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Header/Button_Spawn" to="." method="_on_button_spawn_pressed"]
