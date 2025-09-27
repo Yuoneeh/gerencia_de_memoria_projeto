@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btbgvef6paept"]
+[gd_scene load_steps=10 format=3 uid="uid://btbgvef6paept"]
 
 [ext_resource type="Script" uid="uid://c46rintv655n1" path="res://scenes/game/main/main.gd" id="1_e63ou"]
 [ext_resource type="PackedScene" uid="uid://dkxhuctstis4o" path="res://scenes/objects/background/background.tscn" id="2_jses0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="4_61abd"]
 [ext_resource type="Script" uid="uid://37rwxae1t3uo" path="res://scenes/objects/program_base/program_base.gd" id="4_irboa"]
 [ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/all_assets/small_process.png" id="6_xomjg"]
+[ext_resource type="PackedScene" uid="uid://0nqqxacxuayc" path="res://System_task_manager/task_manager_3_0.tscn" id="9_jpied"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_e63ou")
@@ -252,5 +253,11 @@ unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="task_manager" parent="." instance=ExtResource("9_jpied")]
+offset_left = 668.0
+offset_top = 12.0
+offset_right = 668.0
+offset_bottom = 12.0
 
 [editable path="Control/program_base/PassiveSlot2"]
