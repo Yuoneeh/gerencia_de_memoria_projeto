@@ -7,17 +7,17 @@
 		"1" : {
 				"texture" : "small_process.png",
 				"slot_type" : 2,
-				"SIZE" : 2
+				"SIZE" : 200
 		},
 		"2" : {
 				"texture" : "medium_process.png",
 				"slot_type" : 3,
-				"SIZE" : 3
+				"SIZE" : 500
 		},
 		"3" : {
 				"texture" : "large_process.png",
 				"slot_type" : 4,
-				"SIZE" : 4
+				"SIZE" : 2000
 		},
 		"4" : {
 				"texture" : "gigantic_process.png",

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="projeto_gerencia_de_memoria_godot"
-run/main_scene="uid://btbgvef6paept"
+run/main_scene="uid://d0b2bo8m2g0ol"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 ItemData="*res://autoload/database.gd"
 DataHandler="*res://Data/DataHandler.gd"
+
+[gui]
+
+theme/custom_font="uid://bsvm0s7scj80l"
 
 [input]
 

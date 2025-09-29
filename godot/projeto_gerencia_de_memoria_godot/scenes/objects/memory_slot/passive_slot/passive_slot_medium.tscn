@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx8d43g04wxt2"]
+
+[ext_resource type="PackedScene" uid="uid://dhjsxbkm1eh6" path="res://scenes/objects/memory_slot/slot.tscn" id="1_pumo7"]
+[ext_resource type="Script" uid="uid://b6dkkvnffstv1" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.gd" id="2_rg7q5"]
+
+[node name="PassiveSlot" instance=ExtResource("1_pumo7")]
+custom_minimum_size = Vector2(300, 70)
+offset_right = 114.0
+script = ExtResource("2_rg7q5")

@@ -1,10 +1,13 @@
-extends Node2D
-@onready var Sum_label = %Sum_of_ram
+extends Node
+
 @export var Browser = PackedScene
 @export var Email = PackedScene
 @export var MSN = PackedScene
 @export var server = PackedScene
-@onready var spawn_position = $Marker2D
+@onready var spawn_position = $"../Marker2D"
+
+
+
 
 func spawn_random_program():
 	var program_pool = [Browser, Email, MSN, server]
@@ -15,11 +18,7 @@ func spawn_random_program():
 	add_child(new_program)
 	new_program.global_position = spawn_position.position
 
-
-
-func _process(delta: float) -> void:
-	Sum_label.text = "Ram em uso: " + str(ItemData.ram_used)
-
+	
 
 func _on_timer_timeout() -> void:
 	print("Program Spawn")

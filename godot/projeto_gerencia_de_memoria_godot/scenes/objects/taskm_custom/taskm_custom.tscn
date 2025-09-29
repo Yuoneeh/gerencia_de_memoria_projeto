@@ -1,0 +1,156 @@
+[gd_scene load_steps=4 format=3 uid="uid://p0kyxdp54g5i"]
+
+[ext_resource type="Script" uid="uid://705o7svxqny3" path="res://scenes/objects/taskm_custom/taskm_custom.gd" id="1_gmgsi"]
+[ext_resource type="Script" uid="uid://bu48s3lbqferv" path="res://scenes/objects/taskm_custom/slot_regulator.gd" id="2_88wd6"]
+[ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="2_fd0ss"]
+
+[node name="taskm_custom" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 266.0
+offset_right = 503.73
+offset_bottom = 503.836
+scale = Vector2(0.74, 0.74)
+script = ExtResource("1_gmgsi")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 110.81265
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="draggable_border" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -6.7567596
+offset_top = -39.189198
+offset_right = 432.58826
+offset_bottom = 0.81080246
+mouse_filter = 2
+color = Color(0.5372549, 0.63529414, 0.34117648, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="draggable_border"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="draggable_border/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Task Manager"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="draggable_border"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="minimizar" type="Button" parent="draggable_border/HBoxContainer"]
+layout_mode = 2
+text = "[ ]"
+
+[node name="fechar" type="Button" parent="draggable_border/HBoxContainer"]
+custom_minimum_size = Vector2(31.09, 0)
+layout_mode = 2
+text = "X"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -5.4054565
+offset_top = -39.18921
+offset_right = 385.13507
+offset_bottom = -1.1444092e-05
+flat = true
+
+[node name="slot_regulator" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_88wd6")
+
+[node name="PassiveSlot" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 2.7027054
+offset_top = 181.08105
+offset_right = 427.02704
+offset_bottom = 262.16217
+slot_type = 4
+
+[node name="PassiveSlot2" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 1.3513565
+offset_top = 6.7567444
+offset_right = 115.35139
+offset_bottom = 76.756744
+slot_type = 2
+
+[node name="PassiveSlot4" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 118.91893
+offset_top = 6.7567444
+offset_right = 232.91895
+offset_bottom = 76.756744
+slot_type = 2
+
+[node name="PassiveSlot5" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 236.48645
+offset_top = 6.7567444
+offset_right = 350.48648
+offset_bottom = 76.756744
+slot_type = 2
+
+[node name="PassiveSlot6" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 1.3513565
+offset_top = 271.62164
+offset_right = 115.35136
+offset_bottom = 341.62164
+slot_type = 2
+
+[node name="PassiveSlot8" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 122.97298
+offset_top = 271.62164
+offset_right = 236.97298
+offset_bottom = 341.62164
+slot_type = 2
+
+[node name="PassiveSlot7" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 243.24329
+offset_top = 270.27026
+offset_right = 357.2433
+offset_bottom = 340.27026
+slot_type = 2
+
+[node name="PassiveSlot3" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+layout_mode = 0
+offset_left = 2.7027054
+offset_top = 82.70273
+offset_right = 228.37839
+offset_bottom = 178.37836
+slot_type = 3
+
+[node name="timer_generic" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="draggable_border/HBoxContainer/minimizar" to="." method="_on_minimizar_pressed"]
+[connection signal="pressed" from="draggable_border/HBoxContainer/fechar" to="." method="_on_fechar_pressed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0b2bo8m2g0ol"]
+
+[ext_resource type="PackedScene" uid="uid://dkxhuctstis4o" path="res://scenes/objects/background/background.tscn" id="1_hrg8d"]
+[ext_resource type="Script" uid="uid://dqyqmdmcfru34" path="res://scenes/game/main/menu.gd" id="1_wkihl"]
+[ext_resource type="FontFile" uid="uid://bsvm0s7scj80l" path="res://Font/Minecraftia-Regular.ttf" id="2_wkihl"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_wkihl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="background" parent="Control" instance=ExtResource("1_hrg8d")]
+layout_mode = 0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 203.0
+offset_right = 697.0
+offset_bottom = 522.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wkihl")
+theme_override_font_sizes/font_size = 90
+text = "MMG
+"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 423.0
+offset_top = 292.0
+offset_right = 699.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wkihl")
+text = "
+(Memory Management Gnome)"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 383.0
+offset_right = 629.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wkihl")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

@@ -1,26 +1,41 @@
-[gd_scene load_steps=15 format=3 uid="uid://btbgvef6paept"]
+[gd_scene load_steps=13 format=3 uid="uid://btbgvef6paept"]
 
 [ext_resource type="Script" uid="uid://c46rintv655n1" path="res://scenes/game/main/main.gd" id="1_e63ou"]
 [ext_resource type="PackedScene" uid="uid://dkxhuctstis4o" path="res://scenes/objects/background/background.tscn" id="2_jses0"]
-[ext_resource type="PackedScene" uid="uid://b1mv7jauc0ao8" path="res://scenes/objects/task_manager/task_manager.tscn" id="3_bryd7"]
+[ext_resource type="Script" uid="uid://bliuvvap86ox2" path="res://scenes/objects/gameover/gameover_condition.gd" id="2_w0eqp"]
 [ext_resource type="PackedScene" uid="uid://dhjsxbkm1eh6" path="res://scenes/objects/memory_slot/slot.tscn" id="3_f8ky3"]
 [ext_resource type="PackedScene" uid="uid://hkinuary6ur1" path="res://scenes/objects/task_bar/barra_de_tarefas.tscn" id="3_lq55d"]
+[ext_resource type="Script" uid="uid://c0c2gesvscm66" path="res://scenes/objects/program_spawner/button_spawner.gd" id="3_uftiu"]
 [ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="4_61abd"]
 [ext_resource type="Script" uid="uid://37rwxae1t3uo" path="res://scenes/objects/program_base/program_base.gd" id="4_irboa"]
-[ext_resource type="PackedScene" uid="uid://tg3d5je7ryje" path="res://scenes/objects/secondary_memory/secondary_memory.tscn" id="5_uftiu"]
 [ext_resource type="Texture2D" uid="uid://tyeueh5g7vsc" path="res://scenes/objects/processes/all_assets/small_process.png" id="6_xomjg"]
-[ext_resource type="PackedScene" uid="uid://0nqqxacxuayc" path="res://System_task_manager/task_manager_3_0.tscn" id="9_jpied"]
 [ext_resource type="Texture2D" uid="uid://dv6sk3cv00w10" path="res://scenes/objects/pc_user/sprite.png" id="10_384xb"]
-[ext_resource type="PackedScene" uid="uid://cn5y2cuusjlv5" path="res://scenes/objects/program_button/program_button_starter.tscn" id="11_vp6lp"]
-[ext_resource type="PackedScene" uid="uid://hi2b2yb4mrf7" path="res://scenes/objects/program_packs/browser/browser.tscn" id="13_uftiu"]
-[ext_resource type="Texture2D" uid="uid://bo3evdpk2dd4q" path="res://scenes/objects/app_icons/Browser.png" id="14_uftiu"]
+[ext_resource type="PackedScene" uid="uid://cn5y2cuusjlv5" path="res://scenes/objects/program_button/program_browser_starter.tscn" id="11_vp6lp"]
+[ext_resource type="PackedScene" uid="uid://p0kyxdp54g5i" path="res://scenes/objects/taskm_custom/taskm_custom.tscn" id="12_engua"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_e63ou")
+Browser = ExtResource("11_vp6lp")
+Email = ExtResource("11_vp6lp")
+MSN = ExtResource("11_vp6lp")
+server = ExtResource("11_vp6lp")
+
+[node name="gameover_condition" type="Node" parent="."]
+script = ExtResource("2_w0eqp")
+
+[node name="button_spawner" type="Node" parent="."]
+script = ExtResource("3_uftiu")
+Browser = ExtResource("11_vp6lp")
+Email = ExtResource("11_vp6lp")
+MSN = ExtResource("11_vp6lp")
+server = ExtResource("11_vp6lp")
+
+[node name="Timer" type="Timer" parent="button_spawner"]
 
 [node name="background" parent="." instance=ExtResource("2_jses0")]
 
 [node name="barra_de_tarefas" parent="." instance=ExtResource("3_lq55d")]
+task_manager = ExtResource("12_engua")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -29,20 +44,6 @@ offset_right = 50.0
 offset_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="process_panel" parent="Control" instance=ExtResource("3_bryd7")]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 106.0
-offset_right = 456.72974
-offset_bottom = 672.21625
-
-[node name="secondary_memory" parent="Control" instance=ExtResource("5_uftiu")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 429.72974
-offset_bottom = 566.21625
 
 [node name="process_program" type="Control" parent="Control"]
 visible = false
@@ -109,18 +110,25 @@ slot_type = 3
 [node name="TextureRect" parent="Control/program_base/PassiveSlot2" index="0"]
 texture = ExtResource("6_xomjg")
 
+[node name="Ram_limit" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 317.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "RAM Livre 2000mb/s"
+
 [node name="Sum_of_ram" type="Label" parent="."]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 164.0
+offset_top = 49.0
+offset_right = 218.0
+offset_bottom = 94.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="task_manager" parent="." instance=ExtResource("9_jpied")]
-visible = false
-offset_left = 668.0
-offset_top = 12.0
-offset_right = 668.0
-offset_bottom = 12.0
+theme_override_font_sizes/font_size = 32
+text = "0"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(1052, 535)
@@ -132,7 +140,21 @@ offset_left = 1099.0
 offset_top = 415.0
 offset_right = 1140.0
 offset_bottom = 455.0
-scene_to_instantiate_2 = ExtResource("13_uftiu")
-button_texture = ExtResource("14_uftiu")
+
+[node name="taskm_custom" parent="." instance=ExtResource("12_engua")]
+offset_left = 52.0
+offset_top = 206.0
+offset_right = 481.73
+offset_bottom = 443.836
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(590.45, 254.015)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="button_spawner/Timer" to="button_spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Control/program_base/PassiveSlot2"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1mv7jauc0ao8"]
+[gd_scene load_steps=6 format=3 uid="uid://b1mv7jauc0ao8"]
 
 [ext_resource type="PackedScene" uid="uid://dhjsxbkm1eh6" path="res://scenes/objects/memory_slot/slot.tscn" id="1_hdk4n"]
 [ext_resource type="Script" uid="uid://bwd5x461wu005" path="res://scenes/objects/task_manager/task_manager.gd" id="1_tsba0"]
 [ext_resource type="Script" uid="uid://dnk5t7j2c5ru4" path="res://scenes/objects/task_manager/task_grid.gd" id="2_bicx4"]
+[ext_resource type="PackedScene" uid="uid://dhsm4w7r3c7v3" path="res://scenes/objects/memory_slot/slot_medium.tscn" id="4_etx1r"]
+[ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="5_u4bau"]
 
 [node name="task_manager" type="Control"]
 layout_mode = 3
@@ -19,71 +21,73 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 110.81265
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="task_grid" type="GridContainer" parent="VBoxContainer"]
+[node name="task_grid" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 script = ExtResource("2_bicx4")
 
-[node name="slot" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-custom_minimum_size = Vector2(0.275, 51.965)
+[node name="PassiveSlot" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("5_u4bau")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-slot_type = 1
+slot_type = 2
 
-[node name="slot2" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
+[node name="slot_medium" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("4_etx1r")]
 layout_mode = 2
+
+[node name="PassiveSlot3" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("5_u4bau")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+slot_type = 2
+
+[node name="PassiveSlot4" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("5_u4bau")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+slot_type = 2
+
+[node name="slot_medium2" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("4_etx1r")]
+layout_mode = 2
+
+[node name="PassiveSlot6" parent="PanelContainer/VBoxContainer/task_grid" instance=ExtResource("5_u4bau")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+slot_type = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(57.085, 0)
+layout_mode = 0
+offset_left = -2.7027028
+offset_top = 241.89189
+offset_right = 426.2973
+offset_bottom = 349.8919
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="slot3" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
+[node name="task_grid" type="GridContainer" parent="VBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("2_bicx4")
 
-[node name="slot4" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
+[node name="slot5" parent="VBoxContainer2/task_grid" instance=ExtResource("1_hdk4n")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="slot6" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="slot5" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="slot7" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="slot8" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="slot9" parent="VBoxContainer/task_grid" instance=ExtResource("1_hdk4n")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+slot_type = 4
 
 [node name="draggable_border" type="ColorRect" parent="."]
 layout_mode = 0

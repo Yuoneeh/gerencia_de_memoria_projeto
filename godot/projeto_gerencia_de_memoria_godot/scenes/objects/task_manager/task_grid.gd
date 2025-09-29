@@ -2,13 +2,12 @@ extends GridContainer
 var ID_string
 
 func _ready() -> void:
-	randomizador()
-	add_item()
+	pass
 
-func add_item(ID = ID_string):
+func add_item(ID = "0"):
 	var item_texture = load("res://scenes/objects/processes/all_assets/" + ItemData.get_texture(ID))
 	var item_slot_type = ItemData.get_slot_type(ID)
-	var item_SIZE = ItemData.get_size(ID)
+	var item_SIZE = ItemData.get_SIZE(ID)
  
 	var item_data = {"TEXTURE": item_texture,
 					 "SIZE": item_SIZE,

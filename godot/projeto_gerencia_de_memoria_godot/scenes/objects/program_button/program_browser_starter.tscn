@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn5y2cuusjlv5"]
+[gd_scene load_steps=4 format=3 uid="uid://cn5y2cuusjlv5"]
 
 [ext_resource type="Script" uid="uid://bnq8rhe6p2rqv" path="res://scenes/objects/program_button/program_button_starter.gd" id="1_yo88e"]
+[ext_resource type="PackedScene" uid="uid://hi2b2yb4mrf7" path="res://scenes/objects/program_packs/browser/browser.tscn" id="2_m3ou2"]
+[ext_resource type="Texture2D" uid="uid://bo3evdpk2dd4q" path="res://scenes/objects/app_icons/Browser.png" id="3_vdlwc"]
 
-[node name="program_button_starter" type="Button"]
+[node name="program_browser_starter" type="Button"]
 offset_left = -19.0
 offset_top = -21.0
 offset_right = 22.0
 offset_bottom = 19.0
 script = ExtResource("1_yo88e")
+scene_to_instantiate_2 = ExtResource("2_m3ou2")
+button_texture = ExtResource("3_vdlwc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

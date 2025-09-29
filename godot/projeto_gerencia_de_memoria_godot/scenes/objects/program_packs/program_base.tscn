@@ -43,21 +43,25 @@ custom_minimum_size = Vector2(0.275, 51.965)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+slot_type = 1
 
 [node name="slot2" parent="VBoxContainer/task_grid" instance=ExtResource("3_cklrp")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+slot_type = 1
 
 [node name="slot3" parent="VBoxContainer/task_grid" instance=ExtResource("3_cklrp")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+slot_type = 2
 
 [node name="slot4" parent="VBoxContainer/task_grid" instance=ExtResource("3_cklrp")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+slot_type = 3
 
 [node name="draggable_border" type="ColorRect" parent="."]
 layout_mode = 0

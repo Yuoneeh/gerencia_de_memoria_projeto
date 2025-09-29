@@ -1,7 +1,5 @@
 extends Control
 
-
-
 func calculate():
 	var sum = 0 
 	
