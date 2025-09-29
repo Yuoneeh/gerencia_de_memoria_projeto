@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn5y2cuusjlv5"]
+
+[ext_resource type="Script" uid="uid://bnq8rhe6p2rqv" path="res://scenes/objects/program_button/program_button_starter.gd" id="1_yo88e"]
+
+[node name="program_button_starter" type="Button"]
+offset_left = -19.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 19.0
+script = ExtResource("1_yo88e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

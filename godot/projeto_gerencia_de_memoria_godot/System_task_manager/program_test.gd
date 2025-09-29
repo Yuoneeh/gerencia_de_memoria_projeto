@@ -5,7 +5,7 @@ extends Control
 @onready var task_scene = preload("res://System_task_manager/task.tscn")
 @onready var scroll_container = $Background/MarginContainer/VBoxContainer/ScrollContainer
 @onready var col_count = grid_container.columns #save column number
-@onready var grid_container2 = $Background2/MarginContainer/VBoxContainer/ScrollContainer/GridContainer
+@onready var pointer_1 = $Spawn_1
 
 var previous_mouse_position:Vector2 = Vector2(150,-20)
 var button_pressed : bool = false
@@ -18,10 +18,10 @@ var icon_anchor : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(14):
+	for i in range(2):
 		create_slot()
-	
-	
+	spawn_process_alone()
+	place_task_alone()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,7 +42,7 @@ func _process(delta):
 				pick_task()
 	
 	
-func create_slot():
+func create_slot(): 
 	var new_slot = slot_scene.instantiate()
 	new_slot.slot_ID = grid_array.size()
 	grid_container.add_child(new_slot)
@@ -106,6 +106,7 @@ func set_grids(a_Slot):
 			if grid[0] < icon_anchor.y: icon_anchor.y = grid[0]
 				
 		else:
+			print("can't place")
 			grid_array[grid_to_check].set_color(grid_array[grid_to_check].States.TAKEN)
 
 func clear_grid():
@@ -179,3 +180,40 @@ func _on_button_button_up() -> void:
 
 func _on_minimizar_pressed() -> void:
 	self.visible = false
+
+func spawn_process():
+	var new_task = task_scene.instantiate()
+	add_child(new_task)
+	new_task.load_task(randi_range(1,4))    #randomize this for different tasks to spawn
+	new_task.selected = true
+	task_held = new_task
+
+func place_task_alone():
+	if not can_place or not current_slot: 
+		return #put indication of placement failed, sound or visual here
+		
+	#for changing scene tree
+	task_held.get_parent().remove_child(task_held)
+	grid_container.add_child(task_held)
+	task_held.global_position = pointer_1.global_position
+	####
+	var calculated_grid_id = current_slot.slot_ID + icon_anchor.x * col_count + icon_anchor.y
+	task_held._snap_to(grid_array[calculated_grid_id].global_position)
+	print(calculated_grid_id)
+	task_held.grid_anchor = current_slot
+	for grid in task_held.task_grids:
+		var grid_to_check = current_slot.slot_ID + grid[0] + grid[1] * col_count
+		grid_array[grid_to_check].state = grid_array[grid_to_check].States.TAKEN 
+		grid_array[grid_to_check].task_stored = task_held
+	
+	#put task into a data storage here
+	
+	task_held = null
+	clear_grid()
+	
+func spawn_process_alone():
+	var new_task = task_scene.instantiate()
+	add_child(new_task)
+	new_task.load_task(randi_range(1,4))    #randomize this for different tasks to spawn
+	new_task.selected = true
+	task_held = new_task

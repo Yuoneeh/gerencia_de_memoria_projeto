@@ -1,22 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://0nqqxacxuayc"]
+[gd_scene load_steps=2 format=3 uid="uid://ddsud67ja50xp"]
 
-[ext_resource type="Script" uid="uid://8cmwq8jd8skx" path="res://System_task_manager/task_manager_3_0.gd" id="1_jolrh"]
+[ext_resource type="Script" uid="uid://bxy81atxivn86" path="res://System_task_manager/program_test.gd" id="1_u1kr4"]
 
-[node name="task_manager" type="Control"]
+[node name="program" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jolrh")
+script = ExtResource("1_u1kr4")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -173.0
-offset_top = 18.0
-offset_right = 172.0
-offset_bottom = 503.0
+offset_left = 47.0
+offset_top = 51.0
+offset_right = 392.0
+offset_bottom = 536.0
 color = Color(0.4804794, 0.5165994, 0.40823933, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
@@ -61,6 +61,14 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
+
+[node name="Button" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 0.3513031
+offset_top = -39.0
+offset_right = 345.0
+offset_bottom = 0.18919754
+flat = true
 
 [node name="draggable_border" type="ColorRect" parent="Background"]
 layout_mode = 0
@@ -107,15 +115,11 @@ custom_minimum_size = Vector2(31.09, 0)
 layout_mode = 2
 text = "X"
 
-[node name="Button" type="Button" parent="Background/draggable_border"]
-layout_mode = 0
-offset_left = 1.3513031
-offset_right = 346.0
-offset_bottom = 39.189198
-flat = true
+[node name="Spawn_1" type="Marker2D" parent="."]
+position = Vector2(85, 168)
 
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/Header/Button_Spawn" to="." method="_on_button_spawn_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/Header/Add_slot" to="." method="_on_add_slot_pressed"]
+[connection signal="button_down" from="Background/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Background/Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="Background/draggable_border/HBoxContainer/minimizar" to="." method="_on_minimizar_pressed"]
-[connection signal="button_down" from="Background/draggable_border/Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Background/draggable_border/Button" to="." method="_on_button_button_up"]

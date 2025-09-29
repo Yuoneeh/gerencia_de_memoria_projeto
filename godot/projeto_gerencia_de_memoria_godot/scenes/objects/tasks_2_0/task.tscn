@@ -5,6 +5,12 @@
 [node name="Task" type="Node2D"]
 script = ExtResource("1_xn1xu")
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -141.0
+offset_top = -115.0
+offset_right = 153.0
+offset_bottom = 115.0
+
 [node name="Icon" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5

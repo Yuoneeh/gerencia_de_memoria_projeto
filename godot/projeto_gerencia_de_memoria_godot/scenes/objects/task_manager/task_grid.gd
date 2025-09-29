@@ -1,15 +1,11 @@
 extends GridContainer
-
+var ID_string
 
 func _ready() -> void:
+	randomizador()
 	add_item()
-	add_item("1")
-	add_item("2")
-	add_item("3")
-	add_item("4")
-	add_item("3")
 
-func add_item(ID = "0"):
+func add_item(ID = ID_string):
 	var item_texture = load("res://scenes/objects/processes/all_assets/" + ItemData.get_texture(ID))
 	var item_slot_type = ItemData.get_slot_type(ID)
 	var item_SIZE = ItemData.get_size(ID)
@@ -24,3 +20,13 @@ func add_item(ID = "0"):
 			index = i.get_index()
 			break
 	get_child(index).set_property(item_data)
+
+func randomizador():
+	var ID_task = randf_range(1,4)
+	
+	if ID_task == 1:
+		ID_string = "1"
+	elif ID_task == 2:
+		ID_string = "2"
+	elif ID_task == 3:
+		ID_string = "3"
