@@ -5,6 +5,7 @@ extends Node
 @export var MSN = PackedScene
 @export var server = PackedScene
 @onready var spawn_position = $"../Marker2D"
+signal task_created
 
 
 
@@ -17,9 +18,9 @@ func spawn_random_program():
 
 	add_child(new_program)
 	new_program.global_position = spawn_position.position
-
 	
 
 func _on_timer_timeout() -> void:
+	task_created.emit()
 	print("Program Spawn")
 	spawn_random_program()

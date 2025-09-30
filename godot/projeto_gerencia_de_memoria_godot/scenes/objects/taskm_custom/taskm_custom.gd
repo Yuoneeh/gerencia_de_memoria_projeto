@@ -2,13 +2,14 @@ extends Control
 var button_pressed : bool = false
 var previous_mouse_position:Vector2 = Vector2(150,-20)
 @onready var timer_generic = %timer_generic
-
+ 
 
 func _on_minimizar_pressed() -> void:
 	self.visible = false
 
 
 func _on_fechar_pressed() -> void:
+	$close.play()
 	self.queue_free()
 
 func _process(delta: float) -> void:
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 func _on_button_button_down() -> void:
 	print("Pressionado")
 	button_pressed = true
+	$drag.play()
 
 
 func _on_button_button_up() -> void:

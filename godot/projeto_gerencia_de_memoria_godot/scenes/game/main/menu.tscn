@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0b2bo8m2g0ol"]
+[gd_scene load_steps=5 format=3 uid="uid://d0b2bo8m2g0ol"]
 
-[ext_resource type="PackedScene" uid="uid://dkxhuctstis4o" path="res://scenes/objects/background/background.tscn" id="1_hrg8d"]
 [ext_resource type="Script" uid="uid://dqyqmdmcfru34" path="res://scenes/game/main/menu.gd" id="1_wkihl"]
 [ext_resource type="FontFile" uid="uid://bsvm0s7scj80l" path="res://Font/Minecraftia-Regular.ttf" id="2_wkihl"]
+[ext_resource type="Texture2D" uid="uid://b4kbt5o8sbkn7" path="res://scenes/objects/app_icons/itch_io.png" id="3_wkihl"]
+[ext_resource type="Texture2D" uid="uid://ciya7gsm4tv7" path="res://scenes/objects/gnome/gnome_no_bg.png" id="4_xqda8"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_wkihl")
@@ -17,15 +18,23 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="background" parent="Control" instance=ExtResource("1_hrg8d")]
+[node name="background" type="MarginContainer" parent="Control"]
 layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control/background"]
+layout_mode = 2
+color = Color(0.933333, 1, 0.8, 1)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 455.0
-offset_top = 203.0
-offset_right = 697.0
-offset_bottom = 522.0
+offset_left = 466.0
+offset_top = 189.0
+offset_right = 708.0
+offset_bottom = 508.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_wkihl")
@@ -40,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 423.0
-offset_top = 292.0
-offset_right = 699.0
-offset_bottom = 351.0
+offset_left = 427.0
+offset_top = 269.0
+offset_right = 703.0
+offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -54,13 +63,35 @@ text = "
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 479.0
-offset_top = 383.0
-offset_right = 629.0
-offset_bottom = 464.0
+offset_left = 492.0
+offset_top = 353.0
+offset_right = 642.0
+offset_bottom = 434.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_wkihl")
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 537.0
+offset_right = 136.0
+offset_bottom = 627.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Button2"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -36.0
+offset_right = 127.0
+offset_bottom = 107.0
+texture = ExtResource("3_wkihl")
+
+[node name="GnomeNoBg" type="Sprite2D" parent="."]
+position = Vector2(813, 422)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("4_xqda8")
+flip_h = true
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

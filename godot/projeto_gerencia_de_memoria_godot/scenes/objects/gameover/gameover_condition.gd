@@ -8,6 +8,15 @@ func _process(delta: float) -> void:
 
 
 func gameover():
-	
+	if ItemData.hp_count <= 0:
+		get_tree().change_scene_to_file("res://scenes/game/main/game_over.tscn")
+
+
+func _on_timer_timeout() -> void:
+	print(ItemData.hp_count)
 	if (ram_being_used >= 2000):
-		get_tree().quit()
+		ItemData.hp_count -= 1
+		print(ItemData.hp_count)
+	else:
+		ItemData.points += 100
+		$"../point_sound".play()

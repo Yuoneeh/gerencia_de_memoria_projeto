@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wa5eqasyimkp"
+path="res://.godot/imported/Projeto_novo (2).mp3-43a53675327fc4723e876cbf30f0e73d.mp3str"
+
+[deps]
+
+source_file="res://songs/Projeto_novo (2).mp3"
+dest_files=["res://.godot/imported/Projeto_novo (2).mp3-43a53675327fc4723e876cbf30f0e73d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

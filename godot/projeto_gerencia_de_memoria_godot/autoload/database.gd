@@ -2,7 +2,9 @@ extends Node
  
 var ram_used : int
 var content : Dictionary
- 
+var hp_count : int = 3
+var points : int = 0
+
 func _ready():
 	var file = FileAccess.open("res://autoload/database.json",FileAccess.READ)
  
@@ -10,6 +12,7 @@ func _ready():
  
 	file.close()
  
+
 func get_texture(ID = "0"):
 	return content[ID]["texture"]
  

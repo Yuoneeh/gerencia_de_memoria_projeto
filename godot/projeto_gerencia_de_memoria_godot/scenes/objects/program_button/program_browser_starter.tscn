@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn5y2cuusjlv5"]
+[gd_scene load_steps=5 format=3 uid="uid://cn5y2cuusjlv5"]
 
 [ext_resource type="Script" uid="uid://bnq8rhe6p2rqv" path="res://scenes/objects/program_button/program_button_starter.gd" id="1_yo88e"]
 [ext_resource type="PackedScene" uid="uid://hi2b2yb4mrf7" path="res://scenes/objects/program_packs/browser/browser.tscn" id="2_m3ou2"]
 [ext_resource type="Texture2D" uid="uid://bo3evdpk2dd4q" path="res://scenes/objects/app_icons/Browser.png" id="3_vdlwc"]
+[ext_resource type="AudioStream" uid="uid://cpjbh4ktk3b2r" path="res://songs/computer-mouse-click-352734.mp3" id="4_f2jtn"]
 
 [node name="program_browser_starter" type="Button"]
 offset_left = -19.0
@@ -18,5 +19,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(527, 321)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_f2jtn")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

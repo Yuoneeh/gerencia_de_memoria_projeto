@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://q6qnxxva5iod"]
+
+[ext_resource type="Script" uid="uid://bxwgkhaaw00w7" path="res://scenes/game/main/introduction.gd" id="1_188mc"]
+
+[sub_resource type="Animation" id="Animation_iwvqe"]
+resource_name = "intro"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.4333334, 5.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_188mc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37fwq"]
+_data = {
+&"RESET": SubResource("Animation_188mc"),
+&"intro": SubResource("Animation_iwvqe")
+}
+
+[node name="introduction" type="Node2D"]
+script = ExtResource("1_188mc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 352.0
+offset_top = 249.0
+offset_right = 814.0
+offset_bottom = 308.0
+text = "Nenhum tipo de inteligência artificial foi utilizado 
+Na Elaboração deste projeto."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_37fwq")
+}
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 286.0
+offset_top = 394.0
+offset_right = 880.0
+offset_bottom = 453.0
+text = "Este jogo se encontra em estado de protótipo jogável, 
+apresentando conceitos e integrando a base da jogabilidade."
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

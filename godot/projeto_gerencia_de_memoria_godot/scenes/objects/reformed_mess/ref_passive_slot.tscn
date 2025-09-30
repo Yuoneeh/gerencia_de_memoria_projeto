@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnmp4hykpgrnl"]
+
+[ext_resource type="PackedScene" uid="uid://dhgy1ky3c08oc" path="res://scenes/objects/memory_slot/reformed_slot.tscn" id="1_aig5s"]
+[ext_resource type="Script" uid="uid://bimrhjq5yl6jr" path="res://scenes/objects/reformed_mess/ref_passive_slot.gd" id="2_x3tur"]
+
+[node name="ref_passive_slot" instance=ExtResource("1_aig5s")]
+script = ExtResource("2_x3tur")
+
+[node name="Timer" parent="." index="2"]
+unique_name_in_owner = true

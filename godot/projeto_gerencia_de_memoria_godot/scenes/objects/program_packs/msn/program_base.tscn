@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyvd8btx4760i"]
+
+[ext_resource type="PackedScene" uid="uid://dixu5fr5cs1sw" path="res://scenes/objects/program_packs/program_base.tscn" id="1_k4ijk"]
+[ext_resource type="Texture2D" uid="uid://ckxs7kmn0etvr" path="res://scenes/objects/app_icons/msn.png" id="2_0p35i"]
+[ext_resource type="Script" uid="uid://yvxqfatkywo6" path="res://scenes/objects/program_packs/msn/msn.gd" id="2_i2jw5"]
+
+[node name="program_base" instance=ExtResource("1_k4ijk")]
+
+[node name="task_grid" parent="VBoxContainer" index="0"]
+script = ExtResource("2_i2jw5")
+
+[node name="slot" parent="VBoxContainer/task_grid" index="0"]
+slot_type = 3
+
+[node name="slot2" parent="VBoxContainer/task_grid" index="1"]
+slot_type = 3
+
+[node name="slot4" parent="VBoxContainer/task_grid" index="3"]
+slot_type = 2
+
+[node name="Label" parent="draggable_border/HBoxContainer2" index="0"]
+text = "MSN"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="draggable_border" index="3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="draggable_border/HBoxContainer3" index="0"]
+layout_mode = 2
+texture = ExtResource("2_0p35i")
+expand_mode = 2
+stretch_mode = 3

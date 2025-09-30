@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dkxhuctstis4o"]
+[gd_scene load_steps=2 format=3 uid="uid://dkxhuctstis4o"]
+
+[ext_resource type="Texture2D" uid="uid://cd2k3h2qfo7cb" path="res://scenes/objects/background/elation.png" id="1_663gt"]
 
 [node name="background" type="MarginContainer"]
 offset_right = 1152.0
@@ -9,3 +11,17 @@ size_flags_vertical = 3
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.933333, 1, 0.8, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0.12156863)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.9999695
+offset_right = 1412.0
+offset_bottom = 792.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_663gt")

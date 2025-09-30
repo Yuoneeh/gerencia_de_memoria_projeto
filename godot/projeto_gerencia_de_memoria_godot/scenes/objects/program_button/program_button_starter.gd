@@ -5,13 +5,14 @@ extends Button
 @onready var texture_button = $TextureRect
 @export var button_texture : Texture
 @onready var root = $".."
-
+@onready var marker_spawn = $Marker2D
 
 func _on_pressed() -> void:
+	$AudioStreamPlayer2D.play()
 	var new_scene = scene_to_instantiate_2.instantiate()
 
 	root.add_child(new_scene)
-	#new_scene.global_position = spawn_pointer.position
+	new_scene.global_position = marker_spawn.position
 	queue_free()
 
 func _ready() -> void:

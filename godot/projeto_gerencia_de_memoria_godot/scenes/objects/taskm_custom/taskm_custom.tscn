@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://p0kyxdp54g5i"]
+[gd_scene load_steps=6 format=3 uid="uid://p0kyxdp54g5i"]
 
 [ext_resource type="Script" uid="uid://705o7svxqny3" path="res://scenes/objects/taskm_custom/taskm_custom.gd" id="1_gmgsi"]
 [ext_resource type="Script" uid="uid://bu48s3lbqferv" path="res://scenes/objects/taskm_custom/slot_regulator.gd" id="2_88wd6"]
-[ext_resource type="PackedScene" uid="uid://fe31404hyflb" path="res://scenes/objects/memory_slot/passive_slot/passive_slot.tscn" id="2_fd0ss"]
+[ext_resource type="AudioStream" uid="uid://eurklig5asht" path="res://songs/click (3).wav" id="4_7nlgy"]
+[ext_resource type="PackedScene" uid="uid://dnmp4hykpgrnl" path="res://scenes/objects/reformed_mess/ref_passive_slot.tscn" id="4_88wd6"]
+[ext_resource type="AudioStream" uid="uid://bg0f8uwutcf00" path="res://songs/pickupCoin (1).wav" id="5_7nlgy"]
 
 [node name="taskm_custom" type="Control"]
 layout_mode = 3
@@ -83,72 +85,56 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_88wd6")
 
-[node name="PassiveSlot" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
+[node name="ref_passive_slot" parent="slot_regulator" instance=ExtResource("4_88wd6")]
 layout_mode = 0
-offset_left = 2.7027054
-offset_top = 181.08105
-offset_right = 427.02704
-offset_bottom = 262.16217
-slot_type = 4
-
-[node name="PassiveSlot2" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 1.3513565
-offset_top = 6.7567444
-offset_right = 115.35139
-offset_bottom = 76.756744
-slot_type = 2
-
-[node name="PassiveSlot4" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 118.91893
-offset_top = 6.7567444
-offset_right = 232.91895
-offset_bottom = 76.756744
-slot_type = 2
-
-[node name="PassiveSlot5" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 236.48645
-offset_top = 6.7567444
-offset_right = 350.48648
-offset_bottom = 76.756744
-slot_type = 2
-
-[node name="PassiveSlot6" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 1.3513565
-offset_top = 271.62164
-offset_right = 115.35136
-offset_bottom = 341.62164
-slot_type = 2
-
-[node name="PassiveSlot8" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 122.97298
-offset_top = 271.62164
-offset_right = 236.97298
-offset_bottom = 341.62164
-slot_type = 2
-
-[node name="PassiveSlot7" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 243.24329
-offset_top = 270.27026
-offset_right = 357.2433
-offset_bottom = 340.27026
-slot_type = 2
-
-[node name="PassiveSlot3" parent="slot_regulator" instance=ExtResource("2_fd0ss")]
-layout_mode = 0
-offset_left = 2.7027054
-offset_top = 82.70273
-offset_right = 228.37839
-offset_bottom = 178.37836
+offset_left = 16.216217
+offset_top = 110.81082
+offset_right = 316.21622
+offset_bottom = 180.81082
+self_instance = null
 slot_type = 3
+
+[node name="ref_passive_slot2" parent="slot_regulator" instance=ExtResource("4_88wd6")]
+layout_mode = 0
+offset_left = 16.216217
+offset_top = 6.756775
+offset_right = 120.27028
+offset_bottom = 76.756775
+
+[node name="ref_passive_slot3" parent="slot_regulator" instance=ExtResource("4_88wd6")]
+layout_mode = 0
+offset_left = 140.54056
+offset_top = 6.756771
+offset_right = 244.59462
+offset_bottom = 76.756775
+self_instance = null
+
+[node name="ref_passive_slot4" parent="slot_regulator" instance=ExtResource("4_88wd6")]
+layout_mode = 0
+offset_left = 260.81082
+offset_top = 6.7567787
+offset_right = 364.8649
+offset_bottom = 76.756775
+self_instance = null
+
+[node name="ref_passive_slot5" parent="slot_regulator" instance=ExtResource("4_88wd6")]
+layout_mode = 0
+offset_left = 16.216219
+offset_top = 209.45947
+offset_right = 394.5946
+offset_bottom = 279.45947
+self_instance = null
+slot_type = 4
 
 [node name="timer_generic" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="drag" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7nlgy")
+
+[node name="close" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7nlgy")
+volume_db = 24.0
 
 [connection signal="pressed" from="draggable_border/HBoxContainer/minimizar" to="." method="_on_minimizar_pressed"]
 [connection signal="pressed" from="draggable_border/HBoxContainer/fechar" to="." method="_on_fechar_pressed"]

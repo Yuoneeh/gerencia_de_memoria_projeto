@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm4x2u8oxs4sp"]
+
+[ext_resource type="Script" uid="uid://bnq8rhe6p2rqv" path="res://scenes/objects/program_button/program_button_starter.gd" id="1_nkcqc"]
+[ext_resource type="PackedScene" uid="uid://dy2o33ac02sjg" path="res://scenes/objects/program_packs/msn/msn.tscn" id="2_nkcqc"]
+[ext_resource type="Texture2D" uid="uid://ckxs7kmn0etvr" path="res://scenes/objects/app_icons/msn.png" id="3_idkbl"]
+
+[node name="program_msn_starter" type="Button" node_paths=PackedStringArray("spawn_pointer")]
+offset_left = -19.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 19.0
+script = ExtResource("1_nkcqc")
+scene_to_instantiate_2 = ExtResource("2_nkcqc")
+spawn_pointer = NodePath("Marker2D")
+button_texture = ExtResource("3_idkbl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(527, 321)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -9,7 +9,8 @@ extends TextureRect
 
 		if get_parent() is PassiveSlot:
 			get_parent().get_parent().calculate()
-		
+		else:
+			get_parent().get_parent().calculate()
 		
 @onready var property: Dictionary = {"TEXTURE": texture,
 									 "SIZE": SIZE,

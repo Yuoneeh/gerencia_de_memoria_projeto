@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hkinuary6ur1"]
+[gd_scene load_steps=7 format=3 uid="uid://hkinuary6ur1"]
 
 [ext_resource type="Script" uid="uid://j823htuvsksc" path="res://scenes/objects/task_bar/barra_de_tarefas.gd" id="1_hrbp8"]
 [ext_resource type="Texture2D" uid="uid://bk2755qx7hx5d" path="res://scenes/objects/task_manager/pack icons.png" id="1_r55kf"]
 [ext_resource type="PackedScene" uid="uid://b1mv7jauc0ao8" path="res://scenes/objects/task_manager/task_manager.tscn" id="2_cdgai"]
+[ext_resource type="AudioStream" uid="uid://cpjbh4ktk3b2r" path="res://songs/computer-mouse-click-352734.mp3" id="4_fcoxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrbp8"]
 atlas = ExtResource("1_r55kf")
@@ -67,5 +68,8 @@ flat = true
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_r55kf")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fcoxa")
 
 [connection signal="pressed" from="barra_de_tarefas/HBoxContainer/TextureRect/task_manager" to="." method="_on_task_manager_pressed"]
