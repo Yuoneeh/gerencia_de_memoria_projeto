@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhgy1ky3c08oc"]
+[gd_scene load_steps=5 format=3 uid="uid://dhgy1ky3c08oc"]
 
 [ext_resource type="Script" uid="uid://53d8xhwkfamx" path="res://scenes/objects/memory_slot/reformed_slot.gd" id="1_3q30a"]
-[ext_resource type="PackedScene" uid="uid://dnmp4hykpgrnl" path="res://scenes/objects/reformed_mess/ref_passive_slot.tscn" id="2_4d2sb"]
 [ext_resource type="Script" uid="uid://uoqgxeygoso" path="res://scenes/objects/memory_slot/data.gd" id="2_ojdfj"]
 [ext_resource type="AudioStream" uid="uid://cfwtud6q224sc" path="res://songs/click (2).wav" id="4_46md2"]
 [ext_resource type="AudioStream" uid="uid://depekemakeojs" path="res://songs/click (1).wav" id="5_m7r7u"]
@@ -10,7 +9,7 @@
 offset_right = 300.0
 offset_bottom = 70.0
 script = ExtResource("1_3q30a")
-self_instance = ExtResource("2_4d2sb")
+self_instance = null
 slot_type = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]

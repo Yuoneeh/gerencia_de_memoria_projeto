@@ -18,6 +18,33 @@
 [ext_resource type="AudioStream" uid="uid://bg0f8uwutcf00" path="res://songs/pickupCoin (1).wav" id="16_ukjrp"]
 [ext_resource type="Script" uid="uid://co33xcdfmmxgw" path="res://scenes/objects/gnome/gnome.gd" id="16_xxao2"]
 
+[sub_resource type="Animation" id="Animation_ukjrp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alert:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alert:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-84, -136.92307)]
+}
+
 [sub_resource type="Animation" id="Animation_xxao2"]
 resource_name = "alert"
 length = 5.0
@@ -44,33 +71,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307), Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307), Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307), Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307), Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307), Vector2(-84, -136.92307), Vector2(-84, -156.92307), Vector2(-84, -136.92307)]
-}
-
-[sub_resource type="Animation" id="Animation_ukjrp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Alert:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Alert:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-84, -136.92307)]
 }
 
 [sub_resource type="Animation" id="Animation_heu6d"]

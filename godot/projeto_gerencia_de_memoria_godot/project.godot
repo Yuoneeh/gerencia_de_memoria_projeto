@@ -22,6 +22,8 @@ DataHandler="*res://Data/DataHandler.gd"
 
 [display]
 
+window/size/mode=3
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://hbevfanc2gw7"
 
 [gui]
